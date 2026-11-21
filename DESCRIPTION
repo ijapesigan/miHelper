@@ -1,0 +1,36 @@
+Package: miHelper
+Title: Helper Functions to Combine Multiparameter Multiple Imputation
+        Estimates
+Version: 0.1.0
+Authors@R: 
+    person(given = "Ivan Jacob Agaloos",
+           family = "Pesigan",
+           role = c("aut", "cre", "cph"),
+           email = "r.jeksterslab@gmail.com",
+           comment = c(ORCID = "0000-0003-4818-8420"))
+Description: Helper functions to combine multiparameter multiple imputation estimates
+    including a multivariate version of Rubin's rules (Rubin, 1987 <doi:10.1002/9780470316696>)
+    and the adjustment proposed by Li, Raghunathan, and Rubin
+    (1991 <doi:10.1080/01621459.1991.10475152>).
+    Models are fitted on the imputed data sets
+    from 'mice', 'Amelia', or the multivariate normal model
+    (EM and data augmentation, Schafer, 1997 <doi:10.1201/9780367803025>,
+    in C++), and the estimates are pooled.
+URL: https://github.com/ijapesigan/miHelper,
+        https://ijapesigan.github.io/miHelper/
+BugReports: https://github.com/ijapesigan/miHelper/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 3.5.0)
+Imports: stats, methods, mice, Amelia, lavaan, Rcpp
+LinkingTo: Rcpp, RcppArmadillo
+Suggests: knitr, rmarkdown, testthat
+VignetteBuilder: knitr
+Config/roxygen2/version: 8.1.1.9000
+NeedsCompilation: yes
+Packaged: 2026-11-21 04:55:31 UTC; root
+Author: Ivan Jacob Agaloos Pesigan [aut, cre, cph] (ORCID:
+    <https://orcid.org/0000-0003-4818-8420>)
+Maintainer: Ivan Jacob Agaloos Pesigan <r.jeksterslab@gmail.com>
