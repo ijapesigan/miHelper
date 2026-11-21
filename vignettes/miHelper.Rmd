@@ -1,0 +1,80 @@
+---
+title: "miHelper: Helper Functions to Combine Multiparameter Multiple Imputation Estimates"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+bibliography: "vignettes.bib"
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+nocite: |
+  @RCoreTeam-2026
+vignette: >
+  %\VignetteIndexEntry{miHelper: Helper Functions to Combine Multiparameter Multiple Imputation Estimates}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Description
+
+Helper functions to combine multiparameter multiple imputation estimates
+in R [@RCoreTeam-2026]:
+a multivariate version of Rubin's rules [@Rubin-1987]
+and the adjustment proposed by @Li-Raghunathan-Rubin-1991.
+Models are fitted on the imputed data sets
+from `mice`, `Amelia`, or `norm2`
+(`MIFit()`) and pooled with `MICombine()`.
+
+## Installation
+
+You can install the development version of `miHelper` from
+[GitHub](https://github.com/ijapesigan/miHelper) with:
+
+```r
+if (!require("pak")) install.packages("pak")
+pak::pkg_install("ijapesigan/miHelper")
+```
+
+## Example
+
+```{r}
+library(package = "miHelper")
+fit <- stats::lm(
+  formula = Temp ~ .,
+  data = datasets::airquality
+)
+M <- 5
+```
+
+Fit the model on each imputed data set
+and combine the estimates.
+The data sets are imputed with `mice` (`fun = "mice"`),
+`Amelia` (`fun = "amelia"`),
+or `norm2` (`fun = "mcmcNorm"`).
+
+```{r}
+set.seed(seed = 42)
+mifit <- MIFit(
+  x = datasets::airquality,
+  fit = fit,
+  fun = "mice",
+  M = M
+)
+MICombine(object = mifit)$est
+```
+
+Use the adjustment of Li, Raghunathan, and Rubin (1991).
+
+```{r}
+MICombine(
+  object = mifit,
+  adj = TRUE
+)$total_adj
+```
+
+## References

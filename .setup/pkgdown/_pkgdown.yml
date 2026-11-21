@@ -1,0 +1,13 @@
+destination: pkgdown
+url: https://ijapesigan.github.io/miHelper/
+
+template:
+  package: rProject
+
+articles:
+- title: Getting Started
+  contents:
+  - miHelper
+- title: Session Information
+  contents:
+  - session

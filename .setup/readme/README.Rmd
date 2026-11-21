@@ -1,0 +1,52 @@
+---
+title: "miHelper"
+author: "Ivan Jacob Agaloos Pesigan"
+output: rmarkdown::html_vignette
+bibliography: "vignettes.bib"
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+nocite: |
+  @RCoreTeam-2026
+---
+
+<!-- README.md is generated from .setup/readme/README.Rmd. Please edit that file -->
+
+```{r}
+#| include = FALSE
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/vignettes-",
+  out.width = "100%"
+)
+```
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+## Description
+
+Helper functions to combine multiparameter multiple imputation estimates
+in R [@RCoreTeam-2026]:
+a multivariate version of Rubin's rules [@Rubin-1987]
+and the adjustment proposed by @Li-Raghunathan-Rubin-1991.
+Models are fitted on the imputed data sets
+from `mice`, `Amelia`, or `norm2`
+(`MIFit()`) and pooled with `MICombine()`.
+
+## Installation
+
+You can install the development version of `miHelper` from
+[GitHub](https://github.com/ijapesigan/miHelper) with:
+
+```r
+if (!require("pak")) install.packages("pak")
+pak::pkg_install("ijapesigan/miHelper")
+```
+
+## More Information
+
+See
+[GitHub Pages](https://ijapesigan.github.io/miHelper)
+for package documentation.
+
+## References

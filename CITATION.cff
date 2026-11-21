@@ -1,0 +1,41 @@
+# ------------------------------------------------
+# CITATION.cff file created with {cffr} R package
+# See also: https://docs.ropensci.org/cffr/
+# ------------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "miHelper" in publications use:'
+type: software
+license: MIT
+title: 'miHelper: Helper Functions to Combine Multiparameter Multiple Imputation Estimates'
+version: 0.1.0
+abstract: Helper functions to combine multiparameter multiple imputation estimates
+  including a multivariate version of Rubin's rules (Rubin, 1987 <https://doi.org/10.1002/9780470316696>)
+  and the adjustment proposed by Li, Raghunathan, and Rubin (1991 <https://doi.org/10.1080/01621459.1991.10475152>).
+  Models are fitted on the imputed data sets from 'mice', 'Amelia', or the multivariate
+  normal model (EM and data augmentation, Schafer, 1997 <https://doi.org/10.1201/9780367803025>,
+  in C++), and the estimates are pooled.
+authors:
+- family-names: Pesigan
+  given-names: Ivan Jacob Agaloos
+  email: r.jeksterslab@gmail.com
+  orcid: https://orcid.org/0000-0003-4818-8420
+preferred-citation:
+  type: manual
+  title: 'miHelper: Helper Functions to Combine Multiparameter Multiple Imputation
+    Estimates'
+  authors:
+  - family-names: Pesigan
+    given-names: Ivan Jacob Agaloos
+    email: r.jeksterslab@gmail.com
+    orcid: https://orcid.org/0000-0003-4818-8420
+  year: '2023'
+  notes: R package version 0.1.0
+repository-code: https://github.com/ijapesigan/miHelper
+url: https://ijapesigan.github.io/miHelper/
+contact:
+- family-names: Pesigan
+  given-names: Ivan Jacob Agaloos
+  email: r.jeksterslab@gmail.com
+  orcid: https://orcid.org/0000-0003-4818-8420
+
